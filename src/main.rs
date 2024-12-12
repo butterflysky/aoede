@@ -7,6 +7,7 @@ use songbird::{input, SerenityInit};
 mod lib {
     pub mod config;
     pub mod player;
+    pub mod types;
 }
 use figment::error::Kind::MissingField;
 use lib::player::{SpotifyPlayer, SpotifyPlayerKey};
@@ -300,7 +301,7 @@ async fn main() {
 
     let player = Arc::new(Mutex::new(
         SpotifyPlayer::new(
-            config.spotify_username.clone(),
+            config.spotify_username.clone().into(),
             config.spotify_password.clone(),
             Bitrate::Bitrate320,
             cache_dir,

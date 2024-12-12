@@ -1,3 +1,4 @@
+use crate::lib::types::SpotifyUsername;
 use figment::{
     providers::{Env, Format, Toml},
     Error, Figment,
@@ -9,7 +10,7 @@ pub struct Config {
     #[serde(alias = "DISCORD_TOKEN")]
     pub discord_token: String,
     #[serde(alias = "SPOTIFY_USERNAME")]
-    pub spotify_username: String,
+    pub spotify_username: SpotifyUsername,
     #[serde(alias = "SPOTIFY_PASSWORD")]
     pub spotify_password: String,
     #[serde(alias = "DISCORD_USER_ID")]
